@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>Détails du Contact</h1>
+
+<p>Nom : {{ contact.nom }}</p>
+<p>Prenom : {{ contact.prenom }}</p>
+<p>Email : {{ contact.email }}</p>
+<p>Num : {{ contact.telephone }}</p>
+
+<a href="{{path ('deleteContact',{id : contact.id}) }}">Supprimer</a>
+<a href="{{path ('editContact',{id : contact.id}) }}">Modifier</a>
+{% endblock %}

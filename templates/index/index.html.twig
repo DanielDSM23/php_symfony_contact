@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page d'Accueil</title>
+</head>
+<body>
+{% block body %}
+<h1>Liste des Conducteurs</h1>
+
+<table border="1">
+    <tr>
+        <th>Nom</th>
+        <th>Prenom</th>
+        <th>Afficher</th>
+    </tr>
+
+    {% for contact in contacts %}
+    <tr>
+        <td>{{ contact.nom }}</td>
+        <td>{{ contact.prenom }}</td>
+        <td>
+            <a href="{{ path('showContact', {'id': contact.id}) }}">Afficher les détails</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+<a href="{{ path('newContact') }}">Ajouter contact</a>
+{% endblock %}
+</body>
+</html>
